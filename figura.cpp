@@ -8,7 +8,7 @@ Figura::Figura(QImage *surface, qint32 type):
     QVector <QImage> t;
     if (type==0)
     {
-        _image=QImage("C:\\koding\\tetris1\\Images\\1.png");
+        _image=QImage("Images/1.png");
         t.push_back(_image);
         t.push_back(_image);
         _map.push_back(t);
@@ -16,7 +16,7 @@ Figura::Figura(QImage *surface, qint32 type):
     }
     else if (type==3)
     {
-        _image=QImage("C:\\koding\\tetris1\\Images\\2.png");
+        _image=QImage("Images/2.png");
         t.push_back(QImage());
         t.push_back(QImage());
         _map.push_back(t);
@@ -29,7 +29,7 @@ Figura::Figura(QImage *surface, qint32 type):
     }
     else if (type==2)
     {
-        _image=QImage("C:\\koding\\tetris1\\Images\\3.png");
+        _image=QImage("Images/3.png");
         t.push_back(QImage());
         t.push_back(QImage());
         _map.push_back(t);
@@ -42,7 +42,7 @@ Figura::Figura(QImage *surface, qint32 type):
     }
     else if (type==1)
     {
-        _image=QImage("C:\\koding\\tetris1\\Images\\4.png");
+        _image=QImage("Images/4.png");
         t.push_back(QImage());
         _map.push_back(t);
         _map.push_back(t);
@@ -55,7 +55,7 @@ Figura::Figura(QImage *surface, qint32 type):
     }
     else if (type==4)
     {
-        _image=QImage("C:\\koding\\tetris1\\Images\\5.png");
+        _image=QImage("Images/5.png");
         t.push_back(QImage());
         t.push_back(QImage());
         _map.push_back(t);

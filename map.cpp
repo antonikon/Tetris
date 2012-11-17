@@ -2,7 +2,7 @@
 
 Map::Map()
 {
-    _surface=QImage("C:\\koding\\tetris1\\Images\\BG1.png");
+    _surface=QImage("Images/BG1.png");
     QVector <QImage> t;
     for (int q=0;q<20;q++)
         t.push_back(QImage());
@@ -82,17 +82,17 @@ void Map::render()
     if (_gameOver)
     {
         QPainter painter(&_surface);
-        painter.drawImage(25,90,QImage("C:\\koding\\tetris1\\Images\\GM.png"));
-        painter.drawImage(25,120,QImage("C:\\koding\\tetris1\\Images\\M1.png"));
+        painter.drawImage(25,90,QImage("Images/GM.png"));
+        painter.drawImage(25,120,QImage("Images/M1.png"));
     }
     else if (_pause)
     {
         QPainter painter(&_surface);
-        painter.drawImage(25,90,QImage("C:\\koding\\tetris1\\Images\\P.png"));
+        painter.drawImage(25,90,QImage("Images/P.png"));
     }
     else
     {
-        _surface=QImage("C:\\koding\\tetris1\\Images\\BG1.png");
+        _surface=QImage("Images/BG1.png");
         _fig->paint();
         _nextFig->paint();
         QPainter painter(&_surface);
