@@ -7,6 +7,7 @@
 #include <QTimerEvent>
 #include <QKeyEvent>
 #include <QtCore>
+#include <QMap>
 
 namespace Ui {
 class MainWindow;
@@ -21,12 +22,14 @@ public:
     void paintEvent(QPaintEvent *);
     void timerEvent(QTimerEvent *);
     void keyPressEvent(QKeyEvent *key);
+    void keyReleaseEvent(QKeyEvent *key);
     ~MainWindow();
     
 private:
     Ui::MainWindow *ui;
     Map _map;
-    qint32 _time;
+    qint32 _time,_keyTime;
+    QMap <Qt::Key,bool> _keys;
 };
 
 #endif // MAINWINDOW_H

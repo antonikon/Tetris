@@ -10,7 +10,7 @@ public:
     void paint();
     void x(qint32 x);
     void y(qint32 y);
-    void rotate();
+    void rotate(bool a);
     qint32 sizeX();
     qint32 sizeY();
     qint32 x();
