@@ -252,6 +252,7 @@ void Map::enter()
             _mainMenu=5;
         else if (_curY==3)
         {
+            this->~Map();
             exit(0);
         }
     }
@@ -296,7 +297,7 @@ void Map::chekRecords()
     {
         QStringList l=_records[q].split(" - ");
         if (l.size()>1)
-            if (QString("%1").arg(l[1]).toInt()>_points)
+            if (QString("%1").arg(l[1]).toInt()>=_points)
                 b=false;
     }
     if (b)
@@ -315,14 +316,15 @@ void Map::menu()
 
 Map::~Map()
 {
+    chekRecords();
     QFile file("C:\\koding\\tetris1\\Records.txt");
-    file.open(QFile::WriteOnly);
+    file.open(QFile::ReadWrite);
     file.remove();
     file.close();
     file.setFileName("C:\\koding\\tetris1\\Records.txt");
-    file.open(QFile::WriteOnly);
+    file.open(QFile::ReadWrite);
     QTextStream in(&file);
     for (int q=0;q<5;q++)
-        in << _records[q] << "\n";
+        in << _records[q] << "\r\n";
     file.close();
 }
